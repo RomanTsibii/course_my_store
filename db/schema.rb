@@ -17,7 +17,8 @@ ActiveRecord::Schema.define(version: 2020_10_07_085251) do
     t.string "name"
     t.boolean "real"
     t.float "weight"
-    t.float "description"
+    t.string "description"
+    t.integer "votes_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_items_on_name"

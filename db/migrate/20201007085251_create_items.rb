@@ -1,11 +1,12 @@
 class CreateItems < ActiveRecord::Migration[6.0]
   def change
     create_table :items do |t|
-      t.float   :price
-      t.string  :name
-      t.boolean :real
-      t.float   :weight
-      t.float   :description
+      t.float    :price
+      t.string   :name
+      t.boolean  :real
+      t.float    :weight
+      t.string   :description
+      t.integer  :votes_count, :default => 0
       t.timestamps
     end
     add_index :items, :price

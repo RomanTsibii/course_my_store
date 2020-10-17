@@ -1,0 +1,27 @@
+<% if @items.count == 0 %>
+  <h1>Даний товар не існує</h1>
+<% else %>
+  <h1>Всі товари</h1>
+
+  <% @items.each do |i| %>
+
+    <table>
+      <tr>
+        <th>id item</th>
+        <th>Назва товару</th>
+        <th>Ціна</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <td><%= i.id %></td>
+        <td><%= link_to i.name, item_path(i) %></td>
+        <td><%= i.price %></td>
+        <td><%= link_to "Видалити товар", item_path(i), method: :delete, data: {confirm: "Точно видалити товар?"} %></td>
+        <td>Рейтинг: <%= i.votes_count %><%= link_to "+", upvote_item_path(i) %></td>
+      </tr>
+    </table>
+
+  <% end %>
+<% end %>
