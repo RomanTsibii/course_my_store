@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyStore</title>
+
+    <title>Щось криве </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,9 @@
   </head>
 
   <body>
+
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/notification' %>
     <%= yield %>
   </body>
 </html>
