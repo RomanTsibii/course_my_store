@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
     render file: "public/404.html", status: 404
   end
 
-  def check_if_admin
-    render_403 unless params[:admin]
+  def check_if_registered
+    render_403 unless current_user
   end
 
 end
